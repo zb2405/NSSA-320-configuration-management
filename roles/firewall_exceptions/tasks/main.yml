@@ -1,0 +1,19 @@
+---
+- name: ensure firewalld is installed
+  dnf: name=firewalld state=present
+  tags: firewalld
+
+- name: ensure firewalld is enabled and started
+  service: name=firewalld enabled=yes state=started
+  tags: firewalld
+
+- name: firewalld configuration
+  firewalld:
+    zone: public
+    service: "{{ item }}"
+    permanent: yes
+    state: enabled
+  notify: restart firewalld
+  loop:
+    - https
+    - http

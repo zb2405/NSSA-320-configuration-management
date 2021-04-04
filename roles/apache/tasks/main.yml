@@ -1,0 +1,21 @@
+---
+- name: Apache latest version installation
+  dnf:
+      name: httpd
+      state: latest
+
+- name: Copy and overwrite explore california files
+  copy:
+      src: explore_california/
+      dest: /var/www/html
+
+- name: Copy and overwrite Apache configuration files
+  copy:
+      src: httpd.conf
+      dest: /etc/httpd
+      backup: yes
+
+- name: Enable service to start on boot up
+  service:
+    name: httpd
+    state: started

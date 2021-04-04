@@ -1,0 +1,22 @@
+---
+dnf_automatic:
+  commands:
+    apply_updates: true
+    download_updates: true
+    random_sleep: 0
+    upgrade_type: default
+  command:
+    command_format: cat
+    stdin_format: '"{body}"'
+  command_email:
+    command_format: '"mail -s {subject} -r {email_from} {email_to}"'
+    stdin_format: '"{body}"'
+    email_from: root
+    email_to: root
+  emitters:
+    emit_via: stdio
+    system_name: None
+  email:
+    email_from: root
+    email_host: localhost
+    email_to: root

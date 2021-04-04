@@ -1,0 +1,10 @@
+[webservers]
+node1.nssa.local ansible_user=student
+node2.nssa.local ansible_user=student
+node3.nssa.local ansible_user=student
+
+[siege]
+siege.nssa.local ansible_user=student
+
+[loadbalancer]
+lb.nssa.local ansible_user=student

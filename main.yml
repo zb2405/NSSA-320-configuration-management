@@ -1,0 +1,26 @@
+---
+#Basic update and firewall tasks in all clients
+- hosts: all
+  become: 'yes'
+  roles:
+    - dnf_automatic
+    - firewall_exceptions
+    - selinux
+
+#Apache tasks in webservers
+- hosts: webservers
+  become: 'yes'
+  roles:
+    - apache
+
+#HAproxy tasks in Loadbalancer
+- hosts: loadbalancer
+  become: 'yes'
+  roles:
+    - haproxy
+
+#Siege tasks in Siege host
+- hosts: siege
+  become: 'yes'
+  roles:
+    - siege

@@ -1,0 +1,14 @@
+---
+# This role installs HAProxy and configures it.
+
+- name: Download and install haproxy
+  dnf: name=haproxy state=present
+
+- name: Copy haproxy cnf file
+  copy:
+    src: haproxy.cfg
+    dest: /etc/haproxy
+    backup: yes
+
+- name: Start the haproxy service
+  service: name=haproxy state=started enabled=yes

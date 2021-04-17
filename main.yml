@@ -6,13 +6,13 @@
     - dnf_automatic
     - firewall_exceptions
     - selinux
-
-#Apache tasks in webservers
-- hosts: webservers
+    
+#Apache deploy to new webservers
+- hosts: webservers 1
   become: 'yes'
   roles:
     - apache
-
+    
 #HAproxy tasks in Loadbalancer
 - hosts: loadbalancer
   become: 'yes'

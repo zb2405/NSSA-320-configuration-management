@@ -6,7 +6,7 @@
 
 - name: Copy haproxy cnf file
   copy:
-    src: haproxy.cfg
+    src: haproxy2.cfg
     dest: /etc/haproxy
     backup: yes
 

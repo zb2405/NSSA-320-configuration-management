@@ -6,7 +6,7 @@
 
 - name: Copy and overwrite explore california files
   copy:
-      src: explore_california_ver3/
+      src: explore_california_ver4/
       dest: /var/www/html
 
 - name: Copy and overwrite Apache configuration files

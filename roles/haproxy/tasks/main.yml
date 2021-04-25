@@ -6,9 +6,12 @@
 
 - name: Copy haproxy cnf file
   copy:
-    src: haproxy2.cfg
+    src: backend2/haproxy.cfg
     dest: /etc/haproxy
     backup: yes
 
 - name: Start the haproxy service
   service: name=haproxy state=started enabled=yes
+
+- name: Restart the haproxy service 
+  service: name=haproxy state=restarted enabled=yes

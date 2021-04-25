@@ -1,14 +1,6 @@
----
-#Basic update and firewall tasks in all clients
-- hosts: all
-  become: 'yes'
-  roles:
-    - dnf_automatic
-    - firewall_exceptions
-    - selinux
-    
+--- 
 #Apache deploy to new webservers
-- hosts: webservers 1
+- hosts: webservers_2
   become: 'yes'
   roles:
     - apache

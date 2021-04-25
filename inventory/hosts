@@ -1,9 +1,9 @@
-[webservers 1]
+[webservers_1]
 node1.nssa.local ansible_user=student
 node2.nssa.local ansible_user=student
 node3.nssa.local ansible_user=student
 
-[webservers 2]
+[webservers_2]
 node4.nssa.local ansible_user=student
 node5.nssa.local ansible_user=student
 node6.nssa.local ansible_user=student
